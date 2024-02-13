@@ -6,13 +6,13 @@ body {
 #container { 
     background-color: #232938;
     width: 500px;
-    height: 500px;
+    height: 600px;
     margin: 0 auto;
 }
 #card {
     justify-content: center;
     align-items: center;
-    padding: 50px 30px 20px 30px;
+    padding: 10px 30px 20px 30px;
 }
 #container-h1 {
     color: white;
@@ -34,20 +34,25 @@ hr {
     color: 1px solid #273549;
 
 }
+#btn-group {
+    margin-top: 0px;
+}
 #generate-btn {
     background-color: #10B981;
     padding: 10px 15px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border-radius: 5px;
     font-size: 15px;
+    font-weight: heavy;
     color: white;
     border: none;
     cursor: pointer;
+    margin-top: -10px;
 }
 #fields {
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 0px 30px;
     text-align: center;
 }
 #password-one, #password-two{
@@ -63,5 +68,50 @@ hr {
 #alert {
     color: orangered;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+}
+#password-length {
+    padding: 10px 5px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+}
+#submit-btn {
+    padding: 10px 5px;
+    color: white;
+    font-weight: heavy;
+    background-color: #10B981;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+}
+#input {
+    margin-bottom: 20px;
+}
+#input p {
+    color: #edede9;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+#btn-group p {
+    color: #edede9;
+    font-size: 16px;
+    margin-top: 20px;
+}
+#checkbox-group-scharacters, #checkbox-group-numbers {
+    display: flex;
+}
+#checkbox-one, #checkbox-two {
+    margin-right: 5px;
+    width: 20px;
+}
+#checkbox-group-scharacters p, #checkbox-group-numbers p {
+    color: #edede9;
+    font-size: 16px;
+}
+#checkbox-group-numbers {
+    margin-top: 0px;
+}
+#checkbox-group-scharacters {
+    margin-bottom: 0px;
 }

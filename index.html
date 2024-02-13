@@ -12,7 +12,23 @@
             <h1 id="container-h1">Generate a</h1>
             <h2 id="container-h2">random password</h2>
             <p id = "container-p">Never use an insecure password again</p>
-            <button id="generate-btn">Generate passwords</button>
+            <div id="input">
+                <p>Specify password length</p>
+                <input type="number" min="10" max="30" id="password-length" placeholder="Maximum 30">
+                <button type="submit" id="submit-btn">Submit</button>
+            </div>
+            <div id="btn-group">
+                <p>15 character passwords</p>
+                <button id="generate-btn">Generate passwords</button>
+            </div>
+            <div id="checkbox-group-scharacters">
+                <input type="checkbox" id="checkbox-one" name="exclude">
+                <p>Exclude special characters</p>
+            </div>  
+            <div id="checkbox-group-numbers">
+                <input type="checkbox" id="checkbox-two" name="exclude">
+                <p>Exclude numbers</p>
+            </div>
             <hr>
         </div>
         <div id="fields">
@@ -21,6 +37,6 @@
         </div>
         <h3 id="alert"></h3>
     </div>
-    <script src="index.js"></script>
+    <script src="index.js" async></script>
 </body>
 </html>

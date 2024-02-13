@@ -11,23 +11,83 @@ const generateBtn = document.getElementById("generate-btn");
 const passwordOne = document.getElementById("password-one");
 const passwordTwo = document.getElementById("password-two");
 const container = document.getElementById("container");
-const passwordAlert = document.getElementById("alert")
-console.log(passwordOne.textContent)
-console.log(passwordTwo.textContent)
+const passwordAlert = document.getElementById("alert");
+const passwordLength = document.getElementById("password-length")
+const submitBtn = document.getElementById("submit-btn");
+const checkboxOne = document.getElementById("checkbox-one");
+const checkboxTwo = document.getElementById("checkbox-two");
 
 generateBtn.addEventListener("click", function(){
-    getRandomPassword()
-})
+    getRandomPassword(15)
+});
 
-function getRandomPassword() {
-    if (!passwordOne.textContent && !passwordTwo.textContent){
-    for (let i = 0; i < 15; i++) {
-    let randomPasswordOne = characters[Math.floor(Math.random() * characters.length * 1)]
-    let randomPasswordTwo = characters[Math.floor(Math.random() * characters.length * 1)]
-    passwordOne.textContent += randomPasswordOne
-    passwordTwo.textContent += randomPasswordTwo
-    } 
-}};
+function getRandomPassword(length) {
+    let twoCheckedBoxes = document.querySelectorAll('input[name="color"]:checked');
+    if (checkboxOne.checked) {
+        console.log("checkboxOne checked")
+        let arrRange = characters.slice(0,62)
+        console.log(arrRange)
+            if (!passwordOne.textContent && !passwordTwo.textContent){
+                for (let i = 0; i < length; i++) {
+                let randomPasswordOne = arrRange[Math.floor(Math.random() * arrRange.length * 1)]
+                let randomPasswordTwo = arrRange[Math.floor(Math.random() * arrRange.length * 1)]
+                passwordOne.textContent += randomPasswordOne
+                passwordTwo.textContent += randomPasswordTwo
+                } }
+            else {
+                passwordAlert.textContent = "Please refresh page and regenerate passwords"
+                }
+            } 
+    else if (checkboxTwo.checked) {
+            checkboxOne.disabled = true
+            console.log("checkbox2 checked")
+            let arrRangeTwo = characters.slice(0,52)
+            let arrRangeThree = characters.slice(63,91)
+            let combinedArray = arrRangeTwo.concat(arrRangeThree)
+            console.log(arrRangeTwo)
+            console.log(combinedArray)
+                if (!passwordOne.textContent && !passwordTwo.textContent){
+                    for (let i = 0; i < length; i++) {
+                    let randomPasswordOne = combinedArray[Math.floor(Math.random() * combinedArray.length * 1)]
+                    let randomPasswordTwo = combinedArray[Math.floor(Math.random() * combinedArray.length * 1)]
+                    passwordOne.textContent += randomPasswordOne
+                    passwordTwo.textContent += randomPasswordTwo
+                    }
+                }
+                else {
+                    passwordAlert.textContent = "Please refresh page and regenerate passwords"
+                }
+            }
+    else if (checkboxTwo.checked, checkboxOne.checked) {
+            console.log("Both checkboxes checked")
+            let arrRangeFour = characters.slice(0,52)
+            console.log(arrRangeFour)
+                if (!passwordOne.textContent && !passwordTwo.textContent){
+                    for (let i = 0; i < length; i++) {
+                    let randomPasswordOne = arrRangeFour[Math.floor(Math.random() * arrRangeFour.length * 1)]
+                    let randomPasswordTwo = arrRangeFour[Math.floor(Math.random() * arrRangeFour.length * 1)]
+                    passwordOne.textContent += randomPasswordOne
+                    passwordTwo.textContent += randomPasswordTwo
+                    } 
+                }
+                else {
+                    passwordAlert.textContent = "Please refresh page and regenerate passwords"
+                    }
+                }
+    else {
+                if (!passwordOne.textContent && !passwordTwo.textContent){
+                for (let i = 0; i < length; i++) {
+                let randomPasswordOne = characters[Math.floor(Math.random() * characters.length * 1)]
+                let randomPasswordTwo = characters[Math.floor(Math.random() * characters.length * 1)]
+                passwordOne.textContent += randomPasswordOne
+                passwordTwo.textContent += randomPasswordTwo
+                } 
+                }
+                else {
+                passwordAlert.textContent = "Please refresh page and regenerate passwords"
+                }
+            }
+};
 
 function copyPassword() {
     if (passwordOne.textContent && passwordTwo.textContent){
@@ -46,6 +106,17 @@ passwordOne.addEventListener("click", function(){
 
 passwordTwo.addEventListener("click", function(){
     copyPassword()
+});
+
+submitBtn.addEventListener("click", function(length) {
+        let passLength = passwordLength.value
+        if (passLength <= 30 && passLength >= 10) {
+        getRandomPassword(passLength)
+        passwordLength.value = ""
+        }
+        else {
+            passwordAlert.textContent = "Please enter value between 10 and 30."
+        }
 });
 
 
