@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Password Generator</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Safest Password Generator</title>
+  </head>
+  <body>
     <div id="container">
-        <div id="card">
-            <h1 id="container-h1">Generate a</h1>
-            <h2 id="container-h2">random password</h2>
-            <p id = "container-p">Never use an insecure password again</p>
-            <div id="input">
-                <p>Specify password length</p>
-                <input type="number" min="10" max="30" id="password-length" placeholder="Maximum 30">
-                <button type="submit" id="submit-btn">Submit</button>
-            </div>
-            <div id="btn-group">
-                <p>15 character passwords</p>
-                <button id="generate-btn">Generate passwords</button>
-            </div>
-            <div id="checkbox-group-scharacters">
-                <input type="checkbox" id="checkbox-one" name="exclude">
-                <p>Exclude special characters</p>
-            </div>  
-            <div id="checkbox-group-numbers">
-                <input type="checkbox" id="checkbox-two" name="exclude">
-                <p>Exclude numbers</p>
-            </div>
-            <hr>
+      <div id="card">
+        <h1 id="container-h1">Generate a</h1>
+        <h2 id="container-h2">random password</h2>
+        <p id="container-p">Never use an insecure password again</p>
+        <div id="input">
+          <p>Specify password length</p>
+          <input
+            type="number"
+            min="10"
+            max="30"
+            id="password-length"
+            placeholder="Maximum 30"
+          />
+          <button type="submit" id="submit-btn">Submit</button>
         </div>
-        <div id="fields">
-            <div id="password-one"><h3></h3></div>
-            <div id="password-two"><h3></h3></div>
+        <div id="btn-group">
+          <p>15 character passwords</p>
+          <button id="generate-btn">Generate passwords</button>
         </div>
-        <h3 id="alert"></h3>
+        <div id="checkbox-group-scharacters">
+          <input type="checkbox" id="checkbox-one" />
+          <p>Exclude special characters</p>
+        </div>
+        <div id="checkbox-group-numbers">
+          <input type="checkbox" id="checkbox-two" />
+          <p>Exclude numbers</p>
+        </div>
+        <hr />
+      </div>
+      <div id="fields">
+        <div id="password-one"><h3></h3></div>
+        <div id="password-two"><h3></h3></div>
+      </div>
+      <h3 id="alert"></h3>
     </div>
     <script src="index.js" async></script>
-</body>
+  </body>
 </html>
